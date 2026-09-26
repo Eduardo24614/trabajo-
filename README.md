@@ -70,3 +70,46 @@ console.log(nombre, precio);
 const {cantidad, nota = "sin nota"} = pedido;
 console.log(cantidad, nota);
 console.log("Eduardo Saul Fraire Baez")
+
+
+//------ PASO 7 ------
+const total = producto.precio * pedido.cantidad;
+pedido.total = total;
+
+console.log("-----PASO 7 -----");
+console.log(pedido);
+
+//------- PASO 8 COPIAR -------
+console.log("------ PASO 8 -----")
+const copiamala = producto;
+copiamala.precio = 999;
+console.log(producto.precio);
+// VA IMPRIMIR 999 PORQUE ESO ES DE LA COPIAMALA Y PRODUCTO APUNTAN AL MISMO OBJETO
+// la variable no guarda el objeto, guarda donde esta
+
+
+producto.precio = 15;//la dejamos como estaba
+const copiaBuena = {...producto};
+copiaBuena.precio = 1000;
+console.log(producto.precio);// 15 el original quedo intacto
+
+
+//----- PASO 9 -----
+console.log("----- PASO 9 -----")
+
+const respuestaOK = {
+    ok: true,
+    data:pedido
+};
+
+const respuestaError = {
+    ok: false,
+    error: {
+        mensaje:"elproducto no esta disponible",
+        detalle:[]
+    }
+};
+
+
+console.log(respuestaOK);
+console.log(respuestaError);
